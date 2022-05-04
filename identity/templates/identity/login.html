@@ -1,0 +1,29 @@
+{% extends 'identity/non-auth-base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+   <div class="col-sm-4 p-3 mb-2 mt-1 position-absolute top-50 start-50 translate-middle card shadow" style="background-color: #D7BDE2; border-radius:0.3cm" >
+      <form method="POST">
+         {% csrf_token %}
+         <fieldset class="form-group ">
+            <legend class="border-bottom mb-4 fw-bold fs-1 text-center">Welcome Reader!<p class="fw-bold fs-6 ">The Book Haven</p></legend>
+            
+            {{ form|crispy }}
+         </fieldset>
+         <div class="form-group text-center">
+            <button type="submit" class="btn btn-outline-dark mt-3">Log in</button>
+         </div>
+      </form>  
+      <div class="border-top pt-3 mt-3 text-center">
+         <small class="text-muted">
+            <p class="text-muted">Don't have an Account? <a href="{% url 'register' %}">Create an Account.</a></p>
+         </small>
+      </div>
+   </div>
+
+   <div style="margin-left:8.15cm; margin-top:1.7cm">
+      <img src="\media\divider1.gif">
+   </div>
+   <div style="margin-top:8.3cm; margin-left:8.15cm">
+      <img src="\media\divider1.gif">
+   </div>
+{% endblock content %}

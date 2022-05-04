@@ -1,0 +1,9 @@
+{% extends 'identity/non-auth-base.html' %}
+{% block content %}
+   <div class="row mt-5">
+       <div class="col " >
+        <legend class="border-bottom mb-1 fw-bold fs-4 ">You have been logged out</legend>
+           <a href="{% url 'login' %}" class="btn btn-outline-dark mt-3 ">Log In Again</a>
+       </div>
+   </div>
+{% endblock content %}

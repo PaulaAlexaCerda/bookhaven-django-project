@@ -1,0 +1,21 @@
+{% extends 'identity/non-auth-base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+   <div class="col-sm-5 p-1 mb-1 position-absolute top-50 start-50 translate-middle card shadow" style="background-color:#D7BDE2;">
+      <form method="POST">
+         {% csrf_token %}
+         <fieldset class="form-group ">
+            <legend class="border-bottom mb-1 fw-bold fs-2 text-center">Register</legend>
+            {{ form|crispy }}
+         </fieldset>
+         <div class="form-group text-center">
+            <button class="btn btn-outline-dark " type="submit">Sign Up</button>
+         </div>
+      </form>
+      <div class="border-top pt-1 mt-1 text-center">
+         <small class="text-muted">
+            Already have an Account? <a class="mb-1" href="{% url 'login' %}">Sign In</a>
+         </small>
+      </div>
+   </div>
+{% endblock content %}

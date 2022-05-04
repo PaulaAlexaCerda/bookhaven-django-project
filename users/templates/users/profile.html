@@ -1,0 +1,36 @@
+{% extends 'dashboard/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<body style="background-color:#D2B4DE;">
+
+<div class="card mb-5 mb-1 p-1 mt-4 position-absolute top-50 start-50 translate-middle card shadow" style="max-width: 1200px;" >
+    <div class="row g-0 media " style="background-color:#EBDEF0;">
+      <div class="col-md-3">
+        <img class="rounded-circle account-img img-thumbnail" src="{{ user.profile.image.url }}">
+        <div class="media-body text-center">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+         </div>
+      </div>
+      <div class="col-md-9">
+        <div class="card-body " style="background-color:#D7BDE2;">
+            <form method="POST" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <fieldset class="form-group ">
+                    <legend class="border-bottom mb-1 fw-bold fs-2 text-center">Profile Info</legend>
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-dark mt-3 " type="submit">Update Profile</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <img src="\media\sparks.png" style="height:15.5cm; margin-left:4.7cm">
+ </div>
+ </body>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'dashboard/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<body style="background-color:#D2B4DE;">
+
+  <div class="col-sm-5 p-3 mb-4 mt-1 position-absolute top-50 start-50 translate-middle card shadow" style="background-color:#D7BDE2;">
+    <form method="POST">
+       {% csrf_token %}
+       <fieldset class="form-group ">
+          <legend class="border-bottom mb-1 fw-bold fs-2 text-center" style="color:#633974;">Book Post</legend>
+          {{ form|crispy }}
+       </fieldset>
+       <div class="form-group text-center">
+          <button class="btn btn-outline-dark mt-3 " type="submit">Post</button>
+       </div>
+    </form>
+  </div>
+  <div>
+     <img src="\media\sparks.png" style="height:15.5cm; margin-left:4.7cm">
+  </div>
+
+  </body>
+{% endblock content %}

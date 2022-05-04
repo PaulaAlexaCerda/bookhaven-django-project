@@ -1,0 +1,16 @@
+{% extends 'dashboard/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-sm-4 mt-3 p-2 mb-2 position-absolute top-50 start-50 translate-middle card" style="background-color:rgba(68, 173, 166, 0.911)" >
+    <form method="POST">
+       {% csrf_token %}
+       <fieldset class="form-group ">
+          <legend class="border-bottom mb-4 fw-bold fs-2 ">Post</legend>
+          {{ form|crispy }}
+       </fieldset>
+       <div class="form-group ">
+          <button type="submit" class="btn btn-outline-dark mt-3 ">Submit</button>
+       </div>
+    </form>
+ </div>
+{% endblock content %}

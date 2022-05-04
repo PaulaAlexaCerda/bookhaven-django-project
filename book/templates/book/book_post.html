@@ -1,0 +1,28 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+    {% for post in posts %}
+
+    <body style="background-color:#D2B4DE;">
+
+    <div class="card mb-3 p-3 mt-4 border-dark shadow" style="margin-left: 5.9cm; max-width: 700px;">
+      <div class="row g-0">
+        <div class="col-md-2">
+          <img src="{{ post.author.profile.image.url }}" class="rounded-circle account-img img-thumbnail" >
+        </div>
+        <div class="col-md-10 p-1">
+          <div class="media-body">
+            <a class="mr-1" href="#">{{ post.author }}</a>
+            <small class="text-muted ">{{ post.date_posted|date:"F d, Y" }}</small>
+          </div>
+          <h2><a class="article-title fs-5" href="{% url 'book:post-detail' post.id %}">{{ post.title }}</a></h2>
+          <p class="article-content">{{ post.content }}</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="\media\heart.gif" style="width:1.5cm; height:1.5cm; margin-left:14cm; margin-bottom:-0.1cm; margin-top:0.1cm">
+    </div>
+    
+  </body>
+    {% endfor %}
+{% endblock content %}
