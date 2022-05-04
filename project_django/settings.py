@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7&sf3y)r4(xllus*+rj4!mary5z2*@%99!h2uot!%=^xneez=5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mybookhavenapp.herokuapp.com']
 
 
 # Application definition
